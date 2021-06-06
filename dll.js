@@ -82,8 +82,25 @@ export default class DoubleLinkedList {
   /**
    * Get a Node at a specific index
    */
-  getNodeAtIndex(index) {}
+  getNodeAtIndex(index) {
 
+       // check to make sure that the list is not empty and that the index provided is not less then 0.
+    if(!this.length || index < 0 || index>=this.length) {
+      return null
+    } else {
+      let current;
+      let counter = 0;
+      current = this.head;
+      // checks to see if the index is in the head
+      while (counter < index) {
+        current = current.next;
+        counter++;
+      }
+      return current
+    }
+  }
+
+ 
   /**
    * Set a node at a specific index.
    */
