@@ -132,6 +132,28 @@ export default class DoubleLinkedList {
    */
   insertAtIndex(index, val) {
     // check to make sure that the list is not empty and that the index provided is not less then 0.
+    if(index < 0 || index > this.length) {
+      return null;
+    } else if(index === 0) {
+      return this.unshift(value);
+    } else if(index === this.length) {
+      return this.push(value)
+    } else {
+      // create a new nodes
+      const newNode = new Node(value)
+      const prevNode = this.get(index - 1);
+      const nextNode = prevNode.next;
+
+      // connects to the previous node
+      newNode.prev = prevNode;
+      prevNode.next = newNode;
+      // connects to the next node
+      newNode.next = nextNode
+      nexNode.prev = newNode;
+
+      this.length++;
+    }
+
   }
 
   /**
