@@ -2,5 +2,8 @@
   "name": "js",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jest": "^27.0.4",
+    "node-notifier": "^8.0.1 || ^9.0.0"
+  }
 }
